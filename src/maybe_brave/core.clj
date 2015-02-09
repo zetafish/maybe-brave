@@ -39,10 +39,11 @@
 (defn symmetrize-body-parts
   "Expects a seq of maps which have a :name and :size"
   [asym-body-parts]
-  (map (fn [part]
-         (if (needs-matching-part? part)
-           [part (make-matching-part part)]
-           part))
-       asym-body-parts))
+  (flatten
+   (map (fn [part]
+          (if (needs-matching-part? part)
+            [part (make-matching-part part)]
+            part))
+        asym-body-parts)))
 
 (symmetrize-body-parts asym-hobbit-body-parts)
