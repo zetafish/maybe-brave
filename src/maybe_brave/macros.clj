@@ -3,6 +3,7 @@
 
 ;;; See: http://www.braveclojure.com/writing-macros/
 
+
 ;; vanilla Clojure
 (defn read-resource
   [path]
